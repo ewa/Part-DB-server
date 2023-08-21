@@ -90,6 +90,13 @@ To use it you have to create an account at Digi-Key and get an API key on the [D
 You must create an organization there and create a "Production app". Most settings are not important, you just have to grant access to the "Product Information" API.
 You will get an Client ID and a Client Secret, which you have to enter in the Part-DB env configuration (see below).
 
+TODO: Document that DigiKey distinguishes between "sandbox apps" which
+are immediately available to any developer and "production apps" which
+must be associated with an organization, *and* that the code must be
+manually edited to work with sandbox app credentials, *and* that one
+gets an uninformative OAUTH error if one tries to use sandbox
+credentials.
+
 Following env configuration options are available:
 * `PROVIDER_DIGIKEY_CLIENT_ID`: The client ID you got from Digi-Key (mandatory)
 * `PROVIDER_DIGIKEY_SECRET`: The client secret you got from Digi-Key (mandatory)
