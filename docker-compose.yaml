@@ -11,7 +11,7 @@ services:
       - ./public_media:/var/www/html/public/media
       - ./db:/var/www/html/var/db
     restart: unless-stopped
-    image: 209c171c59eb
+    image: 7833ce42964f16bd969ded05cb6114d0c4ba381d29d1bc641aae6f36da8b1f37
     environment:
       # Put SQLite database in our mapped folder. You can configure some other kind of database here too.
       - DATABASE_URL=sqlite:///%kernel.project_dir%/var/db/app.db
@@ -23,6 +23,9 @@ services:
       # However you can add add any other environment configuration you want here
       # See .env file for all available options or https://docs.part-db.de/configuration.html
 
+      # XXX_EWA - not just can configure, must configure, otherwise the values from the .env file are not propagated to the container!
+      - PROVIDER_DIGIKEY_CLIENT_ID
+      - PROVIDER_DIGIKEY_SECRET
       # The language to use serverwide as default (en, de, ru, etc.)
       - DEFAULT_LANG=en
       # The default timezone to use serverwide (e.g. Europe/Berlin)

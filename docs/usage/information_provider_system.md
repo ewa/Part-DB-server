@@ -92,7 +92,7 @@ You will get an Client ID and a Client Secret, which you have to enter in the Pa
 
 Following env configuration options are available:
 * `PROVIDER_DIGIKEY_CLIENT_ID`: The client ID you got from Digi-Key (mandatory)
-* `PROVIDER_DIGIKEY_CLIENT_SECRET`: The client secret you got from Digi-Key (mandatory)
+* `PROVIDER_DIGIKEY_SECRET`: The client secret you got from Digi-Key (mandatory)
 * `PROVIDER_DIGIKEY_CURRENCY`: The currency you want to get prices in (optional, default: `EUR`)
 * `PROVIDER_DIGIKEY_LANGUAGE`: The language you want to get the descriptions in (optional, default: `en`)
 * `PROVIDER_DIGIKEY_COUNTRY`: The country you want to get the prices for (optional, default: `DE`)
