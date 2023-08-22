@@ -5,13 +5,15 @@ services:
     # By default Part-DB will be running under Port 8080, you can change it here
     ports:
       - '8080:80'
+      - '443:443'
     volumes:
       # By default
       - ./uploads:/var/www/html/uploads
       - ./public_media:/var/www/html/public/media
       - ./db:/var/www/html/var/db
+      - ./.docker/confs/ssl:/etc/apache2/ssl
     restart: unless-stopped
-    image: 7833ce42964f16bd969ded05cb6114d0c4ba381d29d1bc641aae6f36da8b1f37
+    image: ewa1/partdb
     environment:
       # Put SQLite database in our mapped folder. You can configure some other kind of database here too.
       - DATABASE_URL=sqlite:///%kernel.project_dir%/var/db/app.db

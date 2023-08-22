@@ -106,7 +106,10 @@ COPY --chown=www-data:www-data . .
 RUN a2dissite 000-default.conf
 COPY ./.docker/symfony.conf /etc/apache2/sites-available/symfony.conf
 RUN a2ensite symfony.conf
+COPY ./.docker/symfony_ssl.conf /etc/apache2/sites-available/symfony_ssl.conf
+RUN a2ensite symfony_ssl.conf
 RUN a2enmod rewrite
+RUN a2enmod ssl
 
 # Install composer and yarn dependencies for Part-DB
 USER www-data
